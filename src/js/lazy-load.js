@@ -1,5 +1,3 @@
-const images = document.querySelectorAll('.card__image');
-
 const lazyLoad = targets => {
   const options = {
     rootMargin: '100px',
@@ -10,10 +8,7 @@ const lazyLoad = targets => {
       if (entry.isIntersecting) {
         const img = entry.target;
         const src = img.dataset.lazy;
-
-        img.src = `${src}`;
-        console.log(entry.target);
-        console.log('Завантажую зображення');
+        img.src = src;
         observer.unobserve(img);
       }
     });
@@ -23,4 +18,5 @@ const lazyLoad = targets => {
   targets.forEach(target => io.observe(target));
 };
 
+const images = document.querySelectorAll('.card__image');
 lazyLoad(images);

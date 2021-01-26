@@ -1,8 +1,6 @@
-// імпортую шаблон
 import template from '../templates/gallery-items.hbs';
-// імпортую масив даних для шаблону
 import foodMenu from '../menu.json';
+import refs from './refs';
 
 const markup = template(foodMenu);
-const ul = document.querySelector('.menu');
-ul.insertAdjacentHTML('beforeend', markup);
+refs.ul.insertAdjacentHTML('beforeend', markup);
